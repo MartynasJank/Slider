@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+}
+
+.slideShow{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 1;
+    }
+    .arrowLeft{
+        left: 10px;
+    }
+    .arrowRight{
+        right: 10px;
+    }
+    .slides{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: block;
+        font-size: 0;
+        overflow: hidden;
+        height: 400px;
+        .slide{
+            display: inline-block;
+            width: 100vw;
+            height: inherit;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            .info{
+                box-sizing: border-box;
+                padding-left: 10%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                h6{
+                    margin: 0;
+                    font-size: 24px;
+                    opacity: 0;
+                    color: white;
+                    position: absolute;
+                    bottom: 0;
+                }
+                h2{
+                    font-size: 32px;
+                    color: white;
+                    margin: 0;
+                }
+                button{
+                    opacity: 0;
+                    position: absolute;
+                    border: 2px solid #fff;
+                    background-color: transparent;
+                    color: #fff;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    bottom: 0;
+                }
+            }
+        }
+        .slide1{
+            background-image: url(../images/1.jpg);
+        }   
+        .slide2{
+            background-image: url(../images/2.jpg);
+        }   
+        .slide3{
+            background-image: url(../images/3.jpg);
+        }
+        .slide4{
+            background-image: url(../images/4.jpg);
+        }
+    }
+    .bullets{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        .bullet{
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 5px;
+            
+            &:last-of-type{
+                margin-right: 0;
+            }
+            img{
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+            }
+            
+            &.active{
+                width: 16px;
+                height: 16px;
+                content:url("../images/active.png");
+            }
+        }
+    }
+}
+
+@media (max-width: 667px){
+    .slideShow{
+        .arrow{
+            display: none;
+        }
+    }
+}
